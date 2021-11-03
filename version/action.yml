@@ -1,0 +1,16 @@
+name: version
+description: |
+  Generate a version number from the output of `git describe`,
+  including the latest tag and any commits since that tag or
+  the short hash of the latest commit.
+outputs:
+  version:
+    description: Version
+    value: ${{ steps.version.outputs.version }}
+
+runs:
+  using: 'composite'
+  steps:
+    - id: version
+      run: ${{ github.action_path }}/version.sh
+      shell: bash
