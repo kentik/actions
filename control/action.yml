@@ -6,6 +6,6 @@ outputs:
     description: |
       Actions that have been triggered
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'dist/index.js'
   
